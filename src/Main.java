@@ -30,7 +30,9 @@ public class Main
 		player.printPosition();
 		field.linkPoints();
 		field.printField();
-		System.out.println("0,0 -> 5,0 : " + Vector2D.Distance(field.getPointByPosition(0, 0), field.getPointByPosition(5, 5)));
+		System.out.println("0,0 -> 5,0 : " + Vector2D.Distance(field.getPointByPosition(0, 0), field.getPointByPosition(4, 2)));
+		BasicPoint lerpPoint = Vector2D.Lerp(field.getPointByPosition(0, 0), field.getPointByPosition(4, 4), 0.5f);
+		lerpPoint.print();
 	}
 
 }

@@ -4,8 +4,8 @@ import GameUtil.GameObject;
 
 public abstract class GridPoint 
 {
-	public int xCoord;
-	public int yCoord;
+	public float xCoord;
+	public float yCoord;
 	public boolean passable = true;
 	public GameObject occupant = null;
 	

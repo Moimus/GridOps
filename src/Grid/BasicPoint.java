@@ -2,7 +2,7 @@ package Grid;
 
 public class BasicPoint extends GridPoint
 {
-	public BasicPoint(int XCoord, int YCoord)
+	public BasicPoint(float XCoord, float YCoord)
 	{
 		this.xCoord = XCoord;
 		this.yCoord = YCoord;

@@ -1,5 +1,6 @@
 package GameUtil;
 
+import Grid.BasicPoint;
 import Grid.GridPoint;
 
 public class Vector2D 
@@ -9,11 +10,11 @@ public class Vector2D
 		float dist = -1;
 		try
 		{	
-			int aX = A.xCoord;
-			int aY = A.yCoord;
+			float aX = A.xCoord;
+			float aY = A.yCoord;
 			
-			int bX = B.xCoord;
-			int bY = B.yCoord;
+			float bX = B.xCoord;
+			float bY = B.yCoord;
 			
 			// D = sqrt((xb - xa)^2 + (yb - ya)^2)
 			
@@ -31,9 +32,16 @@ public class Vector2D
 		return dist;
 	}
 	
-	public static void Lerp(GridPoint A, GridPoint B, float segment)
+	//Linear Interpolation
+	public static BasicPoint Lerp(GridPoint A, GridPoint B, float alpha)
 	{
-		//TODO
+		//p1 + alpha * (p2 - p1)
+		
+		float interpolantX = A.xCoord + alpha * (B.xCoord - A.xCoord);
+		float interpolantY = A.yCoord + alpha * (B.yCoord - A.yCoord);
+		
+		BasicPoint interpolant = new BasicPoint(interpolantX,interpolantY);
+		return interpolant;
 	}
 
 }

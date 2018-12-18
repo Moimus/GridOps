@@ -84,13 +84,13 @@ public class GridField
 		return mockField;
 	}
 	
-	public GridPoint getPointByPosition(int x, int y)
+	public GridPoint getPointByPosition(float xCoord, float yCoord)
 	{
 		GridPoint result = null;
 		
 		for(int n = 0; n < field.length; n++)
 		{
-			if(field[n].xCoord == x && field[n].yCoord == y)
+			if(field[n].xCoord == xCoord && field[n].yCoord == yCoord)
 			{
 				result = field[n];
 			}
@@ -99,19 +99,19 @@ public class GridField
 		return result;
 	}
 	
-	public GridPoint[] getNeighbourPoints(int xPos, int yPos)
+	public GridPoint[] getNeighbourPoints(float xCoord, float yCoord)
 	{
-		GridPoint rootPos = this.getPointByPosition(xPos, yPos);
+		GridPoint rootPos = this.getPointByPosition(xCoord, yCoord);
 		GridPoint[] neighbours = new GridPoint[]
 		{
-				this.getPointByPosition(xPos - 1, yPos - 1), // NW point
-				this.getPointByPosition(xPos, yPos - 1), //N point
-				this.getPointByPosition(xPos + 1, yPos - 1), //NE point
-				this.getPointByPosition(xPos - 1, yPos), //E point
-				this.getPointByPosition(xPos + 1, yPos), //W point
-				this.getPointByPosition(xPos - 1, yPos + 1), //SE point
-				this.getPointByPosition(xPos, yPos + 1), //S point
-				this.getPointByPosition(xPos + 1, yPos + 1) //SW point
+				this.getPointByPosition(xCoord - 1, yCoord - 1), // NW point
+				this.getPointByPosition(xCoord, yCoord - 1), //N point
+				this.getPointByPosition(xCoord + 1, yCoord - 1), //NE point
+				this.getPointByPosition(xCoord - 1, yCoord), //E point
+				this.getPointByPosition(xCoord + 1, yCoord), //W point
+				this.getPointByPosition(xCoord - 1, yCoord + 1), //SE point
+				this.getPointByPosition(xCoord, yCoord + 1), //S point
+				this.getPointByPosition(xCoord + 1, yCoord + 1) //SW point
 				
 		};
 		
