@@ -31,8 +31,10 @@ public class Main
 		field.linkPoints();
 		field.printField();
 		System.out.println("0,0 -> 5,0 : " + Vector2D.Distance(field.getPointByPosition(0, 0), field.getPointByPosition(4, 2)));
-		BasicPoint lerpPoint = Vector2D.Lerp(field.getPointByPosition(0, 0), field.getPointByPosition(4, 4), 0.5f);
-		lerpPoint.print();
+		GridPoint lerpPointA = Vector2D.LerpPointOnGrid(field,field.getPointByPosition(4, 1), field.getPointByPosition(4, 4), 0.5f);
+		lerpPointA.print();
+		GridPoint lerpPointB = Vector2D.Lerp(field.getPointByPosition(4, 1), field.getPointByPosition(4, 4), 0.5f);
+		lerpPointB.print();
 	}
 
 }

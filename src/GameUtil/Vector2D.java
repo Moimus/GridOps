@@ -1,10 +1,12 @@
 package GameUtil;
 
 import Grid.BasicPoint;
+import Grid.GridField;
 import Grid.GridPoint;
 
 public class Vector2D 
 {
+	//Distance between two Points/ Vector2D
 	public static float Distance(GridPoint A, GridPoint B)
 	{
 		float dist = -1;
@@ -42,6 +44,15 @@ public class Vector2D
 		
 		BasicPoint interpolant = new BasicPoint(interpolantX,interpolantY);
 		return interpolant;
+	}
+	
+	//Linear Interpolation on a grid
+	public static GridPoint LerpPointOnGrid(GridField grid, GridPoint A, GridPoint B, float alpha)
+	{
+		BasicPoint interpolant = Lerp(A,B,alpha);
+		GridPoint interpolantGridPoint = grid.getPointByPosition((int)interpolant.xCoord, (int)interpolant.yCoord);
+		
+		return interpolantGridPoint;
 	}
 
 }

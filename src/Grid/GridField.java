@@ -21,7 +21,7 @@ public class GridField
 			GridPoint pointX = Rnd.getRandomPoint(xn,0);
 			field.add(pointX);
 			
-			for(int yn = 0; yn < ySize; yn++)
+			for(int yn = 1; yn < ySize; yn++)
 			{
 				GridPoint pointY = Rnd.getRandomPoint(xn,yn);
 				field.add(pointY);
