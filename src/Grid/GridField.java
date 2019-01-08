@@ -1,6 +1,9 @@
 package Grid;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import GameUtil.Vector2D;
 
 public class GridField 
 {
@@ -155,5 +158,26 @@ public class GridField
 			}
 
 		}
+	}
+	
+	
+	//TODO add sort, use collections instead of arraylist
+	public GridPoint getAStarNextPoint(GridPoint start, GridPoint dest)
+	{
+		GridPoint nextPoint = null;
+		ArrayList<HashMap<Float, GridPoint>> openList = new ArrayList<HashMap<Float, GridPoint>>();
+		for(int n = 0; n < start.linkedPoints.length; n++)
+		{
+			if(start.linkedPoints[n] != null)
+			{
+				float localDistance = Vector2D.Distance(start, start.linkedPoints[n]);
+				float targetDistance = Vector2D.Distance(start.linkedPoints[n], dest);
+				float heuristicDistance = localDistance + targetDistance;
+				HashMap<Float, GridPoint> instance = new HashMap<Float, GridPoint>();
+				instance.put(heuristicDistance, start.linkedPoints[n]);
+			}
+		}
+		
+		return nextPoint;
 	}
 }
